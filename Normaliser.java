@@ -5,7 +5,13 @@ import java.util.StringTokenizer;
  * @author benjamin
  */
 public class Normaliser {
-    static String[] normalList = {"Architect", "Software engineer", "Quantity surveyor", "Accountant"};
+    static String[] normalList = {
+    	"-NO MATCH-",
+    	"Architect", 
+    	"Software engineer", 
+    	"Quantity surveyor", 
+    	"Accountant"
+    	};
     static int size = normalList.length;
     static int[] scores = new int[size];
     
@@ -58,7 +64,7 @@ public class Normaliser {
     int maxKey = 0;
 
     for (int i=0; i < array.length; i++) {
-        if (array[i] == 1) {
+        if (array[i] >= 1) {
             maxKey = i;
         }
     }
