@@ -9,7 +9,13 @@ public class Problem1 {
      */
     public static void main(String[] args) {
         
-        String[] abnormalList = {"Java engineer", "C# engineer", "Accountant", "Chief Accountant"};
+        String[] abnormalList = {
+            "Java enginer", 
+            "Software Engineer",
+            "C# engineer", 
+            "Accountant", 
+            "Chief Accountant"
+            };
         
         Normaliser norm = new Normaliser();
         
