@@ -1,5 +1,4 @@
 
-
 import static java.lang.Math.round;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -103,20 +102,19 @@ public class Problem2 {
         for (int i=0; i<size; i++) {            
             counts[array[i]]++;
             
-            if (maxCounts < counts[array[i]]) {
-                
-                maxCounts = counts[array[i]];
-                maxKey.clear();
-         
-            }
             if (maxCounts <= counts[array[i]]) {
+                
+                if (maxCounts < counts[array[i]]) {
+                
+                    maxCounts = counts[array[i]];
+                    maxKey.clear();
+                }
                 
                 int index = array[i];
                 String newWinner = Integer.toString(index);
                 
                 maxKey.add(newWinner);
             }
-            
         }
         return maxKey;
     }
