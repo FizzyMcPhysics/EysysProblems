@@ -1,3 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.Eysys;
+
 import java.util.StringTokenizer;
 
 /**
@@ -5,17 +13,17 @@ import java.util.StringTokenizer;
  * @author benjamin
  */
 public class Normaliser {
-    static String[] normalList = {
-    	"-NO MATCH-",
-    	"Architect", 
-    	"Software engineer", 
-    	"Quantity surveyor", 
-    	"Accountant"
-    	};
-    static int size = normalList.length;
-    static int[] scores = new int[size];
+    String[] normalList = {
+        "- NO MATCHES -", 
+        "Architect", 
+        "Software engineer", 
+        "Quantity surveyor", 
+        "Accountant"
+    };
+    int size = normalList.length;
+    int[] scores = new int[size];
     
-    public static String normalise(String userJob) {
+    public String normalise(String userJob) {
         
         StringTokenizer uJT = new StringTokenizer(userJob); 
         String[] userJobTokens = toArray(uJT);
@@ -60,31 +68,31 @@ public class Normaliser {
         return bestGuess;    
     }
     
-    public static int findGuess(final int[] array) {
+    public int findGuess(final int[] array) {
     int maxKey = 0;
 
     for (int i=0; i < array.length; i++) {
-        if (array[i] >= 1) {
+        if (array[i] >= 1) 
             maxKey = i;
-        }
+        
     }
     //System.out.print(maxKey);
     return maxKey;
     }
     
-    public static void display(StringTokenizer tokens) {
+    public void display(StringTokenizer tokens) {
         while (tokens.hasMoreElements()) {
 			System.out.println(tokens.nextElement());
 		}
     }
     
-    public static String[] toArray(StringTokenizer tokens) {
+    public String[] toArray(StringTokenizer tokens) {
         String[] tokenArray = new String[tokens.countTokens()];
         int i=0;
         while (tokens.hasMoreElements()) {
-			tokenArray[i] = tokens.nextToken();
-                        i++;
-		}
+                tokenArray[i] = tokens.nextToken();
+                i++;
+            } 
         return tokenArray;
     }
 }
