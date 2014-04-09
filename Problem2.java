@@ -1,3 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.Eysys;
 
 import static java.lang.Math.round;
 import java.util.ArrayList;
@@ -96,26 +103,45 @@ public class Problem2 {
     }
     
     private static ArrayList findModeAverage(int[] array, int size, int highestNumber) {
-        ArrayList maxKey = new ArrayList();
-        int maxCounts = 0;
-        int[] counts = new int[highestNumber+1];
+        ArrayList positionsOfModeValues = new ArrayList();
+        int highestFrequency = 0;
+        int[] frequencyOf = new int[highestNumber+1];
+        
         for (int i=0; i<size; i++) {            
-            counts[array[i]]++;
             
-            if (maxCounts <= counts[array[i]]) {
+            int currentNumber = array[i];            
+            frequencyOf[currentNumber]++;
+
+            if (frequencyOf[currentNumber] >= highestFrequency) {
                 
-                if (maxCounts < counts[array[i]]) {
+                if (frequencyOf[currentNumber] > highestFrequency) {
                 
-                    maxCounts = counts[array[i]];
-                    maxKey.clear();
+                    highestFrequency = frequencyOf[currentNumber];
+                    positionsOfModeValues.clear();
                 }
                 
-                int index = array[i];
-                String newWinner = Integer.toString(index);
-                
-                maxKey.add(newWinner);
+                String newMode = Integer.toString(currentNumber);                
+                positionsOfModeValues.add(newMode);
             }
+            /*
+            
+            if (frequencyOf[currentNumber] == highestFrequency) {
+                    
+                String newMode = Integer.toString(currentNumber);                
+                positionsOfModeValues.add(newMode);
+            }
+            
+            if (frequencyOf[currentNumber] > highestFrequency) {
+                
+                highestFrequency = frequencyOf[currentNumber];
+                positionsOfModeValues.clear();
+                String newMode = Integer.toString(currentNumber);                
+                positionsOfModeValues.add(newMode);
+            }
+            
+            */
+            
         }
-        return maxKey;
+        return positionsOfModeValues;
     }
 }
