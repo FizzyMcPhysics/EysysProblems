@@ -1,7 +1,3 @@
-/**
- *
- * @author benjamin
- */
 public class Problem1 {
 
     /**
@@ -11,19 +7,21 @@ public class Problem1 {
         
         String[] abnormalList = {
             "Java enginer", 
-            "Software Engineer",
             "C# engineer", 
+            "Software Engineer", 
+            "Chartered Surveyor", 
             "Accountant", 
-            "Chief Accountant"
-            };
+            "Chief Accountant",
+            "Charterd Acowntant"
+        };
         
-        Normaliser norm = new Normaliser();
+        Normaliser2 norm = new Normaliser2();
         
         for (String job : abnormalList) {
-            String normalisedTitle = Normaliser.normalise(job);
-            System.out.println("'" + job + "'" + " is most likely a type of " + "'" + normalisedTitle + "'");
+            String normalisedTitle = norm.normalise(job);
+            System.out.println(job + " ----> " + normalisedTitle 
+                         + ", Certainty:" + norm.certaintyOfBestGuess + ".");
             System.out.println();
-            //System.out.println();
         }
         
     }
