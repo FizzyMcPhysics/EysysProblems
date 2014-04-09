@@ -8,8 +8,8 @@ public class Normaliser2 {
     String[] normalList = {
         "- NO MATCHES -", 
         "Architect", 
-        "Software engineer", 
-        "Quantity surveyor", 
+        "Software Engineer", 
+        "Quantity Surveyor", 
         "Accountant"
     };
     int size = normalList.length;
